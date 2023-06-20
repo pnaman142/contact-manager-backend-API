@@ -8,6 +8,9 @@ const errorHandler = require("./middleware/errorHandler");
 connectDb();
 app.use(express.json());
 app.use(errorHandler);
+app.get("/", (req, res) => {
+  res.send("hellllllllo..............");
+});
 app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.listen(port, () => {
